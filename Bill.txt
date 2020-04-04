@@ -1,0 +1,16 @@
+
+
+ Wall Painting + Kitchen window door and grill painting = 12400
+ Kitchen stone work = 500
+ Tube lights (3)    = 960
+ Sockets (3)        = 250
+ tap  (1)           = 300
+ Flush+ plumber work= 500
+ electrican work    = 300
+ Cleaning           = 500
+=================================================================            
+       Total Amount = 15710
+       Given amount = 14000
+=================================================================
+     Difference     = 1710 round off to 1700
+=================================================================

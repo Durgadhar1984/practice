@@ -1,0 +1,1777 @@
+login as: pdurgadh
+
+      ========================= Security Notice =========================
+      =      This system is restricted to Oracle authorized users.      =
+      =  Unauthorized access may result in disciplinary action and/or   =
+      =  civil or criminal penalties. To the extent permitted by law,   =
+      =   use of this system may be monitored in accordance with the    =
+      =             terms of Oracle's Acceptable Use Policy.            =
+      ========================= Security Notice =========================
+
+Using keyboard-interactive authentication.
+Password:
+Last login: Tue Apr 10 08:18:20 2018 from aufsn4xdba01.oracleoutsourcing.com
+
+
+      =======================================================
+      =                                                     =
+      =     Oracle's Enterprise Linux x86_64 64bit OSCC     =
+      =                                                     =
+      =======================================================
+
+
+[pdurgadh@aufsn4xdba01 ~]$ ssh lpdx01c080616.usdc6.oraclecloud.com
+pdurgadh@lpdx01c080616.usdc6.oraclecloud.com's password:
+Last login: Tue Apr 10 07:42:59 2018 from lpdx01c080616.usdc6.oraclecloud.com
+[pdurgadh@lpdx01c080616 ~]$ pbrun cloud-root -u oracle
+Successful login using -u option.  If you want to allow X traffic please use -x option.
+Usage: /usr/local/bin/pbrun [policy] -x [target user]
+su from pdurgadh to oracle at Wed Apr 11 02:57:55 UTC 2018
+[oracle@lpdx01c080616 ~]$ . oraenv
+ORACLE_SID = [oracle] ? us6bv1jf1
+The Oracle base has been set to /u01/app/oracle
+[oracle@lpdx01c080616 ~]$ sqlplus '/as sysdba'
+
+SQL*Plus: Release 12.1.0.2.0 Production on Wed Apr 11 02:58:12 2018
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, Real Application Clusters, Automatic Storage Management, OLAP,
+Advanced Analytics and Real Application Testing options
+
+SQL> select name,open_mode from v$database;
+
+NAME      OPEN_MODE
+--------- --------------------
+US6BV1JF  MOUNTED
+
+SQL> exit
+Disconnected from Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, Real Application Clusters, Automatic Storage Management, OLAP,
+Advanced Analytics and Real Application Testing options
+[oracle@lpdx01c080616 ~]$ cd /db_backup/EHNH/us6bv1jf/
+[oracle@lpdx01c080616 us6bv1jf]$ ls -ltr
+total 234346751
+-rw-r----- 1 oracle dba     1073152 Jan 22 12:25 backupset_161_US6BV1JF_51spaghd
+-rw-r----- 1 oracle dba    10215424 Jan 22 12:25 backupset_157_US6BV1JF_4tspaghd
+-rw-r----- 1 oracle dba     2285568 Jan 22 12:25 backupset_164_US6BV1JF_54spaghe
+-rw-r----- 1 oracle dba     1146880 Jan 22 12:25 backupset_165_US6BV1JF_55spaghe
+-rw-r----- 1 oracle dba     1073152 Jan 22 12:25 backupset_167_US6BV1JF_57spaghe
+-rw-r----- 1 oracle dba     1073152 Jan 22 12:25 backupset_166_US6BV1JF_56spaghe
+-rw-r----- 1 oracle dba    25436160 Jan 22 12:25 backupset_162_US6BV1JF_52spaghd
+-rw-r----- 1 oracle dba    11034624 Jan 22 12:25 backupset_163_US6BV1JF_53spaghd
+-rw-r----- 1 oracle dba     1073152 Jan 22 12:25 backupset_168_US6BV1JF_58spaghe
+-rw-r----- 1 oracle dba    25206784 Jan 22 12:25 backupset_160_US6BV1JF_50spaghd
+-rw-r----- 1 oracle dba     1073152 Jan 22 12:25 backupset_170_US6BV1JF_5aspaghe
+-rw-r----- 1 oracle dba     1728512 Jan 22 12:25 backupset_169_US6BV1JF_59spaghe
+-rw-r----- 1 oracle dba     1073152 Jan 22 12:25 backupset_171_US6BV1JF_5bspaghe
+-rw-r----- 1 oracle dba     1073152 Jan 22 12:25 backupset_172_US6BV1JF_5cspaghe
+-rw-r----- 1 oracle dba    31506432 Jan 22 12:25 backupset_158_US6BV1JF_4uspaghd
+-rw-r----- 1 oracle dba    40697856 Jan 22 12:25 backupset_159_US6BV1JF_4vspaghd
+-rw-r----- 1 oracle dba   295264256 Jan 22 12:25 backupset_146_US6BV1JF_4ispaghc
+-rw-r----- 1 oracle dba   454500352 Jan 22 12:25 backupset_147_US6BV1JF_4jspaghc
+-rw-r----- 1 oracle dba   946003968 Jan 22 12:26 backupset_154_US6BV1JF_4qspaghd
+-rw-r----- 1 oracle dba   972029952 Jan 22 12:26 backupset_155_US6BV1JF_4rspaghd
+-rw-r----- 1 oracle dba   983719936 Jan 22 12:26 backupset_156_US6BV1JF_4sspaghd
+-rw-r----- 1 oracle dba  1001185280 Jan 22 12:26 backupset_153_US6BV1JF_4pspaghd
+-rw-r----- 1 oracle dba  1112326144 Jan 22 12:26 backupset_149_US6BV1JF_4lspaghc
+-rw-r----- 1 oracle dba  1163821056 Jan 22 12:26 backupset_151_US6BV1JF_4nspaghc
+-rw-r----- 1 oracle dba  1285398528 Jan 22 12:26 backupset_150_US6BV1JF_4mspaghc
+-rw-r----- 1 oracle dba  1321148416 Jan 22 12:26 backupset_152_US6BV1JF_4ospaghc
+-rw-r----- 1 oracle dba  2162933760 Jan 22 12:27 backupset_144_US6BV1JF_4gspaghc
+-rw-r----- 1 oracle dba  4799201280 Jan 22 12:28 backupset_148_US6BV1JF_4kspaghc
+-rw-r----- 1 oracle dba  3242999808 Jan 22 12:28 backupset_124_US6BV1JF_3sspagha
+-rw-r----- 1 oracle dba  4731445248 Jan 22 12:29 backupset_141_US6BV1JF_4dspaghb
+-rw-r----- 1 oracle dba  4005224448 Jan 22 12:29 backupset_134_US6BV1JF_46spaghb
+-rw-r----- 1 oracle dba  4901167104 Jan 22 12:29 backupset_140_US6BV1JF_4cspaghb
+-rw-r----- 1 oracle dba  4771807232 Jan 22 12:29 backupset_138_US6BV1JF_4aspaghb
+-rw-r----- 1 oracle dba  7763017728 Jan 22 12:30 backupset_145_US6BV1JF_4hspaghc
+-rw-r----- 1 oracle dba 10044678144 Jan 22 12:32 backupset_133_US6BV1JF_45spaghb
+-rw-r----- 1 oracle dba 10150510592 Jan 22 12:32 backupset_137_US6BV1JF_49spaghb
+-rw-r----- 1 oracle dba 10185875456 Jan 22 12:32 backupset_135_US6BV1JF_47spaghb
+-rw-r----- 1 oracle dba 10155827200 Jan 22 12:32 backupset_136_US6BV1JF_48spaghb
+-rw-r----- 1 oracle dba 10872872960 Jan 22 12:32 backupset_128_US6BV1JF_40spaghb
+-rw-r----- 1 oracle dba 10945265664 Jan 22 12:32 backupset_127_US6BV1JF_3vspagha
+-rw-r----- 1 oracle dba 12057829376 Jan 22 12:33 backupset_143_US6BV1JF_4fspaghc
+-rw-r----- 1 oracle dba 12348055552 Jan 22 12:33 backupset_142_US6BV1JF_4espaghc
+-rw-r----- 1 oracle dba 13738213376 Jan 22 12:34 backupset_125_US6BV1JF_3tspagha
+-rw-r----- 1 oracle dba 13847666688 Jan 22 12:34 backupset_126_US6BV1JF_3uspagha
+-rw-r----- 1 oracle dba 13343744000 Jan 22 12:34 backupset_129_US6BV1JF_41spaghb
+-rw-r----- 1 oracle dba 13544022016 Jan 22 12:34 backupset_130_US6BV1JF_42spaghb
+-rw-r----- 1 oracle dba 17120149504 Jan 22 12:36 backupset_139_US6BV1JF_4bspaghb
+-rw-r----- 1 oracle dba 17199792128 Jan 22 12:36 backupset_132_US6BV1JF_44spaghb
+-rw-r----- 1 oracle dba 17537884160 Jan 22 12:37 backupset_131_US6BV1JF_43spaghb
+-rw-r----- 1 oracle dba    11376128 Jan 22 12:37 backupset_175_US6BV1JF_5fspah88
+-rw-r----- 1 oracle dba    88636928 Jan 22 12:37 backupset_174_US6BV1JF_5espah88
+-rw-r----- 1 oracle dba   707844608 Jan 22 12:37 backupset_173_US6BV1JF_5dspah88
+-rw-r----- 1 oracle dba       98304 Jan 22 12:38 backupset_176_US6BV1JF_5gspah9b
+-rw-r----- 1 oracle dba     1228800 Jan 22 12:38 backupset_177_US6BV1JF_5hspah9c
+[oracle@lpdx01c080616 us6bv1jf]$ rman target /
+
+Recovery Manager: Release 12.1.0.2.0 - Production on Wed Apr 11 03:00:19 2018
+
+Copyright (c) 1982, 2014, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: US6BV1JF (DBID=1266298847, not open)
+
+RMAN> CATALOG START WITH '/db_backup/EHNH/us6bv1jf';
+
+using target database control file instead of recovery catalog
+searching for all files that match the pattern /db_backup/EHNH/us6bv1jf
+no files found to be unknown to the database
+
+RMAN> RUN
+{
+ALLOCATE CHANNEL c1_disk DEVICE TYPE disk format '/db_backup/EHNH/us6bv1jf/backupset_%s_%d_%u';
+ALLOCATE CHANNEL c2_disk DEVICE TYPE disk format '/db_backup/EHNH/us6bv1jf/backupset_%s_%d_%u';
+ALLOCATE CHANNEL c3_disk DEVICE TYPE disk format '/db_backup/EHNH/us6bv1jf/backupset_%s_%d_%u';
+ALLOCATE CHANNEL c4_disk DEVICE TYPE disk format '/db_backup/EHNH/us6bv1jf/backupset_%s_%d_%u';
+sql 'alter session set NLS_DATE_FORMAT="DD.MM.YYYY HH24:MI:SS"';
+set UNTIL TIME '22.01.2018 12:45:00';
+restore preview database;
+}2> 3> 4> 5> 6> 7> 8> 9> 10>
+
+allocated channel: c1_disk
+channel c1_disk: SID=2926 instance=us6bv1jf1 device type=DISK
+
+allocated channel: c2_disk
+channel c2_disk: SID=3098 instance=us6bv1jf1 device type=DISK
+
+allocated channel: c3_disk
+channel c3_disk: SID=3270 instance=us6bv1jf1 device type=DISK
+
+allocated channel: c4_disk
+channel c4_disk: SID=3442 instance=us6bv1jf1 device type=DISK
+
+sql statement: alter session set NLS_DATE_FORMAT="DD.MM.YYYY HH24:MI:SS"
+
+executing command: SET until clause
+
+Starting restore at 11-APR-18
+
+
+List of Backup Sets
+===================
+
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+145     Full    954.80M    DISK        00:00:52     22-JAN-18
+        BP Key: 315   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_153_US6BV1JF_4pspaghd
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 145
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  1       Full 18226749092 22-JAN-18 +DATA/us6bv1jf/datafile/system01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+149     Full    1.23G      DISK        00:01:06     22-JAN-18
+        BP Key: 319   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_152_US6BV1JF_4ospaghc
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 149
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  2       Full 18226749090 22-JAN-18 +DATA/us6bv1jf/datafile/sysaux01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+141     Full    433.44M    DISK        00:00:28     22-JAN-18
+        BP Key: 311   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_147_US6BV1JF_4jspaghc
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 141
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  3       Full 18226749072 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_undo01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+154     Full    3.73G      DISK        00:04:13     22-JAN-18
+        BP Key: 324   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_134_US6BV1JF_46spaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 154
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  4       Full 18226749030 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_transaction_table_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+152     Full    3.02G      DISK        00:03:43     22-JAN-18
+        BP Key: 322   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_124_US6BV1JF_3sspagha
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 152
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  5       Full 18226749011 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_transaction_table_02.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+156     Full    4.44G      DISK        00:04:36     22-JAN-18
+        BP Key: 326   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_138_US6BV1JF_4aspaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 156
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  6       Full 18226749038 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_transaction_table_03.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+161     Full    9.46G      DISK        00:07:32     22-JAN-18
+        BP Key: 331   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_136_US6BV1JF_48spaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 161
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  7       Full 18226749034 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_tools_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+158     Full    9.35G      DISK        00:07:24     22-JAN-18
+        BP Key: 328   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_133_US6BV1JF_45spaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 158
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  8       Full 18226749021 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_tools_02.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+159     Full    9.45G      DISK        00:07:30     22-JAN-18
+        BP Key: 329   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_137_US6BV1JF_49spaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 159
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  9       Full 18226749036 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_tools_03.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+160     Full    9.49G      DISK        00:07:31     22-JAN-18
+        BP Key: 330   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_135_US6BV1JF_47spaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 160
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  10      Full 18226749032 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_tools_04.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+138     Full    30.04M     DISK        00:00:03     22-JAN-18
+        BP Key: 308   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_158_US6BV1JF_4uspaghd
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 138
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  11      Full 18226749153 22-JAN-18 +DATA/us6bv1jf/datafile/search_index_1.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+127     Full    1.09M      DISK        00:00:00     22-JAN-18
+        BP Key: 297   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_165_US6BV1JF_55spaghe
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 127
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  12      Full 18226749171 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_archive_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+129     Full    1.02M      DISK        00:00:01     22-JAN-18
+        BP Key: 299   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_166_US6BV1JF_56spaghe
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 129
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  13      Full 18226749182 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_ias_sdpmaq_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+128     Full    1.02M      DISK        00:00:00     22-JAN-18
+        BP Key: 298   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_167_US6BV1JF_57spaghe
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 128
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  14      Full 18226749183 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_nologging_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+125     Full    9.73M      DISK        00:00:01     22-JAN-18
+        BP Key: 295   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_157_US6BV1JF_4tspaghd
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 125
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  15      Full 18226749126 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_interface_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+132     Full    1.02M      DISK        00:00:01     22-JAN-18
+        BP Key: 302   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_168_US6BV1JF_58spaghe
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 132
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  16      Full 18226749184 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_dq_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+146     Full    1.04G      DISK        00:01:03     22-JAN-18
+        BP Key: 316   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_149_US6BV1JF_4lspaghc
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 146
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  17      Full 18226749074 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_seed_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+147     Full    1.08G      DISK        00:01:05     22-JAN-18
+        BP Key: 317   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_151_US6BV1JF_4nspaghc
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 147
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  18      Full 18226749089 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_seed_02.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+124     Full    1.02M      DISK        00:00:01     22-JAN-18
+        BP Key: 294   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_161_US6BV1JF_51spaghd
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 124
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  19      Full 18226749163 22-JAN-18 +DATA/us6bv1jf/datafile/otbi_biacmts_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+133     Full    24.03M     DISK        00:00:02     22-JAN-18
+        BP Key: 303   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_160_US6BV1JF_50spaghd
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 133
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  20      Full 18226749162 22-JAN-18 +DATA/us6bv1jf/datafile/ias_iau.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+139     Full    38.80M     DISK        00:00:03     22-JAN-18
+        BP Key: 309   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_159_US6BV1JF_4vspaghd
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 139
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  21      Full 18226749161 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_aq_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+148     Full    1.20G      DISK        00:01:06     22-JAN-18
+        BP Key: 318   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_150_US6BV1JF_4mspaghc
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 148
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  22      Full 18226749088 22-JAN-18 +DATA/us6bv1jf/datafile/search_data_1.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+126     Full    2.17M      DISK        00:00:00     22-JAN-18
+        BP Key: 296   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_164_US6BV1JF_54spaghe
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 126
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  23      Full 18226749170 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_rdf.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+135     Full    1.64M      DISK        00:00:01     22-JAN-18
+        BP Key: 305   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_169_US6BV1JF_59spaghe
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 135
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  24      Full 18226749189 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_summary_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+134     Full    1.02M      DISK        00:00:01     22-JAN-18
+        BP Key: 304   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_170_US6BV1JF_5aspaghe
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 134
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  25      Full 18226749190 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_media_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+155     Full    4.56G      DISK        00:04:15     22-JAN-18
+        BP Key: 325   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_140_US6BV1JF_4cspaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 155
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  26      Full 18226749045 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_transaction_index_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+153     Full    4.41G      DISK        00:04:10     22-JAN-18
+        BP Key: 323   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_141_US6BV1JF_4dspaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 153
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  27      Full 18226749047 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_transaction_index_02.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+131     Full    10.52M     DISK        00:00:02     22-JAN-18
+        BP Key: 301   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_163_US6BV1JF_53spaghd
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 131
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  28      Full 18226749169 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_grc.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+137     Full    1.02M      DISK        00:00:01     22-JAN-18
+        BP Key: 306   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_171_US6BV1JF_5bspaghe
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 137
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  29      Full 18226749191 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_dyn_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+136     Full    1.02M      DISK        00:00:01     22-JAN-18
+        BP Key: 307   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_172_US6BV1JF_5cspaghe
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 136
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  30      Full 18226749192 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_queues_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+140     Full    281.58M    DISK        00:00:21     22-JAN-18
+        BP Key: 310   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_146_US6BV1JF_4ispaghc
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 140
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  31      Full 18226749054 22-JAN-18 +DATA/us6bv1jf/datafile/undotbs2.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+166     Full    12.79G     DISK        00:09:02     22-JAN-18
+        BP Key: 336   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_125_US6BV1JF_3tspagha
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 166
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  32      Full 18226749013 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.380.965900607
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+167     Full    12.90G     DISK        00:09:03     22-JAN-18
+        BP Key: 337   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_126_US6BV1JF_3uspagha
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 167
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  33      Full 18226749014 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.387.965900607
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+163     Full    10.19G     DISK        00:07:45     22-JAN-18
+        BP Key: 333   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_127_US6BV1JF_3vspagha
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 163
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  34      Full 18226749015 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.426.965900605
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+162     Full    10.13G     DISK        00:07:39     22-JAN-18
+        BP Key: 332   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_128_US6BV1JF_40spaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 162
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  35      Full 18226749016 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.429.965900605
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+168     Full    12.43G     DISK        00:09:16     22-JAN-18
+        BP Key: 338   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_129_US6BV1JF_41spaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 168
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  36      Full 18226749017 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.437.965900605
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+169     Full    12.61G     DISK        00:09:25     22-JAN-18
+        BP Key: 339   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_130_US6BV1JF_42spaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 169
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  37      Full 18226749018 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.687.965900605
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+172     Full    16.33G     DISK        00:12:03     22-JAN-18
+        BP Key: 342   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_131_US6BV1JF_43spaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 172
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  38      Full 18226749019 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.378.965900607
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+171     Full    16.02G     DISK        00:11:29     22-JAN-18
+        BP Key: 341   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_132_US6BV1JF_44spaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 171
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  39      Full 18226749020 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.388.965900605
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+170     Full    15.94G     DISK        00:11:25     22-JAN-18
+        BP Key: 340   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_139_US6BV1JF_4bspaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 170
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  40      Full 18226749040 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.373.965900607
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+164     Full    11.23G     DISK        00:08:01     22-JAN-18
+        BP Key: 334   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_143_US6BV1JF_4fspaghc
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 164
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  41      Full 18226749050 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.2397.965900607
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+165     Full    11.50G     DISK        00:08:21     22-JAN-18
+        BP Key: 335   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_142_US6BV1JF_4espaghc
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 165
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  42      Full 18226749049 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.2398.965900607
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+157     Full    7.23G      DISK        00:05:15     22-JAN-18
+        BP Key: 327   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_145_US6BV1JF_4hspaghc
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 157
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  43      Full 18226749053 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.2400.965900607
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+150     Full    2.01G      DISK        00:02:05     22-JAN-18
+        BP Key: 320   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_144_US6BV1JF_4gspaghc
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 150
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  44      Full 18226749051 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tx_data.2403.965900609
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+151     Full    4.47G      DISK        00:03:30     22-JAN-18
+        BP Key: 321   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_148_US6BV1JF_4kspaghc
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 151
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  45      Full 18226749073 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.363.965900607
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+142     Full    902.17M    DISK        00:00:44     22-JAN-18
+        BP Key: 312   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_154_US6BV1JF_4qspaghd
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 142
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  46      Full 18226749094 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.384.965900607
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+143     Full    926.99M    DISK        00:00:45     22-JAN-18
+        BP Key: 313   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_155_US6BV1JF_4rspaghd
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 143
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  47      Full 18226749095 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.381.965900607
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+144     Full    938.14M    DISK        00:00:46     22-JAN-18
+        BP Key: 314   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_156_US6BV1JF_4sspaghd
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 144
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  48      Full 18226749096 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.382.965900607
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+130     Full    24.25M     DISK        00:00:02     22-JAN-18
+        BP Key: 300   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_162_US6BV1JF_52spaghd
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 130
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  49      Full 18226749168 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tx_data.371.965900607
+
+
+List of Backup Sets
+===================
+
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+174     84.53M     DISK        00:00:04     22-JAN-18
+        BP Key: 344   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_174_US6BV1JF_5espah88
+
+  List of Archived Logs in backup set 174
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    29      18226362918 22-JAN-18 18226772982 22-JAN-18
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+173     10.85M     DISK        00:00:01     22-JAN-18
+        BP Key: 343   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_175_US6BV1JF_5fspah88
+
+  List of Archived Logs in backup set 173
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  2    20      18226699949 22-JAN-18 18226772925 22-JAN-18
+recovery will be done up to SCN 18226773790
+Media recovery start SCN is 18226749011
+Recovery must be done beyond SCN 18226761030 to clear datafile fuzziness
+Finished restore at 11-APR-18
+released channel: c1_disk
+released channel: c2_disk
+released channel: c3_disk
+released channel: c4_disk
+
+RMAN> RUN
+{
+ALLOCATE CHANNEL c1_disk DEVICE TYPE disk format '/db_backup/EHNH/us6bv1jf/backupset_%s_%d_%u';
+ALLOCATE CHANNEL c2_disk DEVICE TYPE disk format '/db_backup/EHNH/us6bv1jf/backupset_%s_%d_%u';
+ALLOCATE CHANNEL c3_disk DEVICE TYPE disk format '/db_backup/EHNH/us6bv1jf/backupset_%s_%d_%u';
+ALLOCATE CHANNEL c4_disk DEVICE TYPE disk format '/db_backup/EHNH/us6bv1jf/backupset_%s_%d_%u';
+set until scn 18226761030;
+restore preview database;
+}2> 3> 4> 5> 6> 7> 8> 9>
+
+allocated channel: c1_disk
+channel c1_disk: SID=2926 instance=us6bv1jf1 device type=DISK
+
+allocated channel: c2_disk
+channel c2_disk: SID=3098 instance=us6bv1jf1 device type=DISK
+
+allocated channel: c3_disk
+channel c3_disk: SID=3270 instance=us6bv1jf1 device type=DISK
+
+allocated channel: c4_disk
+channel c4_disk: SID=3442 instance=us6bv1jf1 device type=DISK
+
+executing command: SET until clause
+
+Starting restore at 11-APR-18
+
+
+List of Backup Sets
+===================
+
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+145     Full    954.80M    DISK        00:00:52     22-JAN-18
+        BP Key: 315   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_153_US6BV1JF_4pspaghd
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 145
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  1       Full 18226749092 22-JAN-18 +DATA/us6bv1jf/datafile/system01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+149     Full    1.23G      DISK        00:01:06     22-JAN-18
+        BP Key: 319   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_152_US6BV1JF_4ospaghc
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 149
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  2       Full 18226749090 22-JAN-18 +DATA/us6bv1jf/datafile/sysaux01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+141     Full    433.44M    DISK        00:00:28     22-JAN-18
+        BP Key: 311   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_147_US6BV1JF_4jspaghc
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 141
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  3       Full 18226749072 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_undo01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+154     Full    3.73G      DISK        00:04:13     22-JAN-18
+        BP Key: 324   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_134_US6BV1JF_46spaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 154
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  4       Full 18226749030 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_transaction_table_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+152     Full    3.02G      DISK        00:03:43     22-JAN-18
+        BP Key: 322   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_124_US6BV1JF_3sspagha
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 152
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  5       Full 18226749011 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_transaction_table_02.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+156     Full    4.44G      DISK        00:04:36     22-JAN-18
+        BP Key: 326   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_138_US6BV1JF_4aspaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 156
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  6       Full 18226749038 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_transaction_table_03.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+161     Full    9.46G      DISK        00:07:32     22-JAN-18
+        BP Key: 331   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_136_US6BV1JF_48spaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 161
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  7       Full 18226749034 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_tools_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+158     Full    9.35G      DISK        00:07:24     22-JAN-18
+        BP Key: 328   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_133_US6BV1JF_45spaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 158
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  8       Full 18226749021 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_tools_02.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+159     Full    9.45G      DISK        00:07:30     22-JAN-18
+        BP Key: 329   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_137_US6BV1JF_49spaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 159
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  9       Full 18226749036 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_tools_03.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+160     Full    9.49G      DISK        00:07:31     22-JAN-18
+        BP Key: 330   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_135_US6BV1JF_47spaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 160
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  10      Full 18226749032 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_tools_04.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+138     Full    30.04M     DISK        00:00:03     22-JAN-18
+        BP Key: 308   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_158_US6BV1JF_4uspaghd
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 138
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  11      Full 18226749153 22-JAN-18 +DATA/us6bv1jf/datafile/search_index_1.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+127     Full    1.09M      DISK        00:00:00     22-JAN-18
+        BP Key: 297   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_165_US6BV1JF_55spaghe
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 127
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  12      Full 18226749171 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_archive_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+129     Full    1.02M      DISK        00:00:01     22-JAN-18
+        BP Key: 299   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_166_US6BV1JF_56spaghe
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 129
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  13      Full 18226749182 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_ias_sdpmaq_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+128     Full    1.02M      DISK        00:00:00     22-JAN-18
+        BP Key: 298   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_167_US6BV1JF_57spaghe
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 128
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  14      Full 18226749183 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_nologging_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+125     Full    9.73M      DISK        00:00:01     22-JAN-18
+        BP Key: 295   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_157_US6BV1JF_4tspaghd
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 125
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  15      Full 18226749126 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_interface_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+132     Full    1.02M      DISK        00:00:01     22-JAN-18
+        BP Key: 302   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_168_US6BV1JF_58spaghe
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 132
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  16      Full 18226749184 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_dq_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+146     Full    1.04G      DISK        00:01:03     22-JAN-18
+        BP Key: 316   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_149_US6BV1JF_4lspaghc
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 146
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  17      Full 18226749074 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_seed_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+147     Full    1.08G      DISK        00:01:05     22-JAN-18
+        BP Key: 317   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_151_US6BV1JF_4nspaghc
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 147
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  18      Full 18226749089 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_seed_02.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+124     Full    1.02M      DISK        00:00:01     22-JAN-18
+        BP Key: 294   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_161_US6BV1JF_51spaghd
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 124
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  19      Full 18226749163 22-JAN-18 +DATA/us6bv1jf/datafile/otbi_biacmts_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+133     Full    24.03M     DISK        00:00:02     22-JAN-18
+        BP Key: 303   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_160_US6BV1JF_50spaghd
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 133
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  20      Full 18226749162 22-JAN-18 +DATA/us6bv1jf/datafile/ias_iau.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+139     Full    38.80M     DISK        00:00:03     22-JAN-18
+        BP Key: 309   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_159_US6BV1JF_4vspaghd
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 139
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  21      Full 18226749161 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_aq_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+148     Full    1.20G      DISK        00:01:06     22-JAN-18
+        BP Key: 318   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_150_US6BV1JF_4mspaghc
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 148
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  22      Full 18226749088 22-JAN-18 +DATA/us6bv1jf/datafile/search_data_1.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+126     Full    2.17M      DISK        00:00:00     22-JAN-18
+        BP Key: 296   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_164_US6BV1JF_54spaghe
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 126
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  23      Full 18226749170 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_rdf.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+135     Full    1.64M      DISK        00:00:01     22-JAN-18
+        BP Key: 305   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_169_US6BV1JF_59spaghe
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 135
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  24      Full 18226749189 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_summary_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+134     Full    1.02M      DISK        00:00:01     22-JAN-18
+        BP Key: 304   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_170_US6BV1JF_5aspaghe
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 134
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  25      Full 18226749190 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_media_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+155     Full    4.56G      DISK        00:04:15     22-JAN-18
+        BP Key: 325   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_140_US6BV1JF_4cspaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 155
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  26      Full 18226749045 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_transaction_index_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+153     Full    4.41G      DISK        00:04:10     22-JAN-18
+        BP Key: 323   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_141_US6BV1JF_4dspaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 153
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  27      Full 18226749047 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_transaction_index_02.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+131     Full    10.52M     DISK        00:00:02     22-JAN-18
+        BP Key: 301   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_163_US6BV1JF_53spaghd
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 131
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  28      Full 18226749169 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_grc.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+137     Full    1.02M      DISK        00:00:01     22-JAN-18
+        BP Key: 306   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_171_US6BV1JF_5bspaghe
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 137
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  29      Full 18226749191 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_dyn_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+136     Full    1.02M      DISK        00:00:01     22-JAN-18
+        BP Key: 307   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_172_US6BV1JF_5cspaghe
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 136
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  30      Full 18226749192 22-JAN-18 +DATA/us6bv1jf/datafile/fusion_queues_01.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+140     Full    281.58M    DISK        00:00:21     22-JAN-18
+        BP Key: 310   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_146_US6BV1JF_4ispaghc
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 140
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  31      Full 18226749054 22-JAN-18 +DATA/us6bv1jf/datafile/undotbs2.dbf
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+166     Full    12.79G     DISK        00:09:02     22-JAN-18
+        BP Key: 336   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_125_US6BV1JF_3tspagha
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 166
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  32      Full 18226749013 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.380.965900607
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+167     Full    12.90G     DISK        00:09:03     22-JAN-18
+        BP Key: 337   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_126_US6BV1JF_3uspagha
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 167
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  33      Full 18226749014 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.387.965900607
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+163     Full    10.19G     DISK        00:07:45     22-JAN-18
+        BP Key: 333   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_127_US6BV1JF_3vspagha
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 163
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  34      Full 18226749015 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.426.965900605
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+162     Full    10.13G     DISK        00:07:39     22-JAN-18
+        BP Key: 332   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_128_US6BV1JF_40spaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 162
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  35      Full 18226749016 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.429.965900605
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+168     Full    12.43G     DISK        00:09:16     22-JAN-18
+        BP Key: 338   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_129_US6BV1JF_41spaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 168
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  36      Full 18226749017 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.437.965900605
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+169     Full    12.61G     DISK        00:09:25     22-JAN-18
+        BP Key: 339   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_130_US6BV1JF_42spaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 169
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  37      Full 18226749018 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.687.965900605
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+172     Full    16.33G     DISK        00:12:03     22-JAN-18
+        BP Key: 342   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_131_US6BV1JF_43spaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 172
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  38      Full 18226749019 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.378.965900607
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+171     Full    16.02G     DISK        00:11:29     22-JAN-18
+        BP Key: 341   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_132_US6BV1JF_44spaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 171
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  39      Full 18226749020 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.388.965900605
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+170     Full    15.94G     DISK        00:11:25     22-JAN-18
+        BP Key: 340   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_139_US6BV1JF_4bspaghb
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 170
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  40      Full 18226749040 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.373.965900607
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+164     Full    11.23G     DISK        00:08:01     22-JAN-18
+        BP Key: 334   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_143_US6BV1JF_4fspaghc
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 164
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  41      Full 18226749050 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.2397.965900607
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+165     Full    11.50G     DISK        00:08:21     22-JAN-18
+        BP Key: 335   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_142_US6BV1JF_4espaghc
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 165
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  42      Full 18226749049 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.2398.965900607
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+157     Full    7.23G      DISK        00:05:15     22-JAN-18
+        BP Key: 327   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_145_US6BV1JF_4hspaghc
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 157
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  43      Full 18226749053 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.2400.965900607
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+150     Full    2.01G      DISK        00:02:05     22-JAN-18
+        BP Key: 320   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_144_US6BV1JF_4gspaghc
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 150
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  44      Full 18226749051 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tx_data.2403.965900609
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+151     Full    4.47G      DISK        00:03:30     22-JAN-18
+        BP Key: 321   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_148_US6BV1JF_4kspaghc
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 151
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  45      Full 18226749073 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.363.965900607
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+142     Full    902.17M    DISK        00:00:44     22-JAN-18
+        BP Key: 312   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_154_US6BV1JF_4qspaghd
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 142
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  46      Full 18226749094 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.384.965900607
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+143     Full    926.99M    DISK        00:00:45     22-JAN-18
+        BP Key: 313   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_155_US6BV1JF_4rspaghd
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 143
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  47      Full 18226749095 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.381.965900607
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+144     Full    938.14M    DISK        00:00:46     22-JAN-18
+        BP Key: 314   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_156_US6BV1JF_4sspaghd
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 144
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  48      Full 18226749096 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.382.965900607
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+130     Full    24.25M     DISK        00:00:02     22-JAN-18
+        BP Key: 300   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_162_US6BV1JF_52spaghd
+        Keep: BACKUP_LOGS        Until: 23-MAR-18
+  List of Datafiles in backup set 130
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  49      Full 18226749168 22-JAN-18 +DATA/US6BV1JF/DATAFILE/fusion_ts_tx_data.371.965900607
+
+
+List of Backup Sets
+===================
+
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+174     84.53M     DISK        00:00:04     22-JAN-18
+        BP Key: 344   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_174_US6BV1JF_5espah88
+
+  List of Archived Logs in backup set 174
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    29      18226362918 22-JAN-18 18226772982 22-JAN-18
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+173     10.85M     DISK        00:00:01     22-JAN-18
+        BP Key: 343   Status: AVAILABLE  Compressed: YES  Tag: FULL_ARCHIVE_TO_NFS
+        Piece Name: /db_backup/EHNH/us6bv1jf/backupset_175_US6BV1JF_5fspah88
+
+  List of Archived Logs in backup set 173
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  2    20      18226699949 22-JAN-18 18226772925 22-JAN-18
+recovery will be done up to SCN 18226761030
+Media recovery start SCN is 18226749011
+Recovery must be done beyond SCN 18226761030 to clear datafile fuzziness
+Finished restore at 11-APR-18
+released channel: c1_disk
+released channel: c2_disk
+released channel: c3_disk
+released channel: c4_disk
+
+RMAN> RUN
+{
+ALLOCATE CHANNEL c1_disk DEVICE TYPE disk format '/db_backup/EHNH/us6bv1jf/backupset_%s_%d_%u';
+ALLOCATE CHANNEL c2_disk DEVICE TYPE disk format '/db_backup/EHNH/us6bv1jf/backupset_%s_%d_%u';
+ALLOCATE CHANNEL c3_disk DEVICE TYPE disk format '/db_backup/EHNH/us6bv1jf/backupset_%s_%d_%u';
+ALLOCATE CHANNEL c4_disk DEVICE TYPE disk format '/db_backup/EHNH/us6bv1jf/backupset_%s_%d_%u';
+restore database until scn 18226761030;
+recover database until scn 18226761030;
+}2> 3> 4> 5> 6> 7> 8> 9>
+
+allocated channel: c1_disk
+channel c1_disk: SID=2926 instance=us6bv1jf1 device type=DISK
+
+allocated channel: c2_disk
+channel c2_disk: SID=3098 instance=us6bv1jf1 device type=DISK
+
+allocated channel: c3_disk
+channel c3_disk: SID=3270 instance=us6bv1jf1 device type=DISK
+
+allocated channel: c4_disk
+channel c4_disk: SID=3442 instance=us6bv1jf1 device type=DISK
+
+Starting restore at 11-APR-18
+
+channel c1_disk: starting datafile backup set restore
+channel c1_disk: specifying datafile(s) to restore from backup set
+channel c1_disk: restoring datafile 00012 to +DATA/us6bv1jf/datafile/fusion_archive_01.dbf
+channel c1_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_165_US6BV1JF_55spaghe
+channel c2_disk: starting datafile backup set restore
+channel c2_disk: specifying datafile(s) to restore from backup set
+channel c2_disk: restoring datafile 00015 to +DATA/us6bv1jf/datafile/fusion_interface_01.dbf
+channel c2_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_157_US6BV1JF_4tspaghd
+channel c3_disk: starting datafile backup set restore
+channel c3_disk: specifying datafile(s) to restore from backup set
+channel c3_disk: restoring datafile 00019 to +DATA/us6bv1jf/datafile/otbi_biacmts_01.dbf
+channel c3_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_161_US6BV1JF_51spaghd
+channel c4_disk: starting datafile backup set restore
+channel c4_disk: specifying datafile(s) to restore from backup set
+channel c4_disk: restoring datafile 00023 to +DATA/us6bv1jf/datafile/fusion_rdf.dbf
+channel c4_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_164_US6BV1JF_54spaghe
+channel c1_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_165_US6BV1JF_55spaghe tag=FULL_ARCHIVE_TO_NFS
+channel c1_disk: restored backup piece 1
+channel c1_disk: restore complete, elapsed time: 00:00:01
+channel c1_disk: starting datafile backup set restore
+channel c1_disk: specifying datafile(s) to restore from backup set
+channel c1_disk: restoring datafile 00013 to +DATA/us6bv1jf/datafile/fusion_ias_sdpmaq_01.dbf
+channel c1_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_166_US6BV1JF_56spaghe
+channel c1_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_166_US6BV1JF_56spaghe tag=FULL_ARCHIVE_TO_NFS
+channel c1_disk: restored backup piece 1
+channel c1_disk: restore complete, elapsed time: 00:00:01
+channel c1_disk: starting datafile backup set restore
+channel c1_disk: specifying datafile(s) to restore from backup set
+channel c1_disk: restoring datafile 00014 to +DATA/us6bv1jf/datafile/fusion_nologging_01.dbf
+channel c1_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_167_US6BV1JF_57spaghe
+channel c2_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_157_US6BV1JF_4tspaghd tag=FULL_ARCHIVE_TO_NFS
+channel c2_disk: restored backup piece 1
+channel c2_disk: restore complete, elapsed time: 00:00:02
+channel c2_disk: starting datafile backup set restore
+channel c2_disk: specifying datafile(s) to restore from backup set
+channel c2_disk: restoring datafile 00016 to +DATA/us6bv1jf/datafile/fusion_dq_01.dbf
+channel c2_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_168_US6BV1JF_58spaghe
+channel c3_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_161_US6BV1JF_51spaghd tag=FULL_ARCHIVE_TO_NFS
+channel c3_disk: restored backup piece 1
+channel c3_disk: restore complete, elapsed time: 00:00:02
+channel c3_disk: starting datafile backup set restore
+channel c3_disk: specifying datafile(s) to restore from backup set
+channel c3_disk: restoring datafile 00020 to +DATA/us6bv1jf/datafile/ias_iau.dbf
+channel c3_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_160_US6BV1JF_50spaghd
+channel c4_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_164_US6BV1JF_54spaghe tag=FULL_ARCHIVE_TO_NFS
+channel c4_disk: restored backup piece 1
+channel c4_disk: restore complete, elapsed time: 00:00:01
+channel c4_disk: starting datafile backup set restore
+channel c4_disk: specifying datafile(s) to restore from backup set
+channel c4_disk: restoring datafile 00024 to +DATA/us6bv1jf/datafile/fusion_summary_01.dbf
+channel c4_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_169_US6BV1JF_59spaghe
+channel c1_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_167_US6BV1JF_57spaghe tag=FULL_ARCHIVE_TO_NFS
+channel c1_disk: restored backup piece 1
+channel c1_disk: restore complete, elapsed time: 00:00:00
+channel c1_disk: starting datafile backup set restore
+channel c1_disk: specifying datafile(s) to restore from backup set
+channel c1_disk: restoring datafile 00025 to +DATA/us6bv1jf/datafile/fusion_media_01.dbf
+channel c1_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_170_US6BV1JF_5aspaghe
+channel c2_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_168_US6BV1JF_58spaghe tag=FULL_ARCHIVE_TO_NFS
+channel c2_disk: restored backup piece 1
+channel c2_disk: restore complete, elapsed time: 00:00:00
+channel c2_disk: starting datafile backup set restore
+channel c2_disk: specifying datafile(s) to restore from backup set
+channel c2_disk: restoring datafile 00028 to +DATA/us6bv1jf/datafile/fusion_grc.dbf
+channel c2_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_163_US6BV1JF_53spaghd
+channel c1_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_170_US6BV1JF_5aspaghe tag=FULL_ARCHIVE_TO_NFS
+channel c1_disk: restored backup piece 1
+channel c1_disk: restore complete, elapsed time: 00:00:00
+channel c1_disk: starting datafile backup set restore
+channel c1_disk: specifying datafile(s) to restore from backup set
+channel c1_disk: restoring datafile 00029 to +DATA/us6bv1jf/datafile/fusion_dyn_01.dbf
+channel c1_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_171_US6BV1JF_5bspaghe
+channel c4_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_169_US6BV1JF_59spaghe tag=FULL_ARCHIVE_TO_NFS
+channel c4_disk: restored backup piece 1
+channel c4_disk: restore complete, elapsed time: 00:00:00
+channel c4_disk: starting datafile backup set restore
+channel c4_disk: specifying datafile(s) to restore from backup set
+channel c4_disk: restoring datafile 00030 to +DATA/us6bv1jf/datafile/fusion_queues_01.dbf
+channel c4_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_172_US6BV1JF_5cspaghe
+channel c1_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_171_US6BV1JF_5bspaghe tag=FULL_ARCHIVE_TO_NFS
+channel c1_disk: restored backup piece 1
+channel c1_disk: restore complete, elapsed time: 00:00:00
+channel c1_disk: starting datafile backup set restore
+channel c1_disk: specifying datafile(s) to restore from backup set
+channel c1_disk: restoring datafile 00049 to +DATA/US6BV1JF/DATAFILE/fusion_ts_tx_data.371.965900607
+channel c1_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_162_US6BV1JF_52spaghd
+channel c3_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_160_US6BV1JF_50spaghd tag=FULL_ARCHIVE_TO_NFS
+channel c3_disk: restored backup piece 1
+channel c3_disk: restore complete, elapsed time: 00:00:00
+channel c3_disk: starting datafile backup set restore
+channel c3_disk: specifying datafile(s) to restore from backup set
+channel c3_disk: restoring datafile 00011 to +DATA/us6bv1jf/datafile/search_index_1.dbf
+channel c3_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_158_US6BV1JF_4uspaghd
+channel c4_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_172_US6BV1JF_5cspaghe tag=FULL_ARCHIVE_TO_NFS
+channel c4_disk: restored backup piece 1
+channel c4_disk: restore complete, elapsed time: 00:00:00
+channel c4_disk: starting datafile backup set restore
+channel c4_disk: specifying datafile(s) to restore from backup set
+channel c4_disk: restoring datafile 00021 to +DATA/us6bv1jf/datafile/fusion_aq_01.dbf
+channel c4_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_159_US6BV1JF_4vspaghd
+channel c1_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_162_US6BV1JF_52spaghd tag=FULL_ARCHIVE_TO_NFS
+channel c1_disk: restored backup piece 1
+channel c1_disk: restore complete, elapsed time: 00:00:01
+channel c1_disk: starting datafile backup set restore
+channel c1_disk: specifying datafile(s) to restore from backup set
+channel c1_disk: restoring datafile 00031 to +DATA/us6bv1jf/datafile/undotbs2.dbf
+channel c1_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_146_US6BV1JF_4ispaghc
+channel c2_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_163_US6BV1JF_53spaghd tag=FULL_ARCHIVE_TO_NFS
+channel c2_disk: restored backup piece 1
+channel c2_disk: restore complete, elapsed time: 00:00:02
+channel c2_disk: starting datafile backup set restore
+channel c2_disk: specifying datafile(s) to restore from backup set
+channel c2_disk: restoring datafile 00003 to +DATA/us6bv1jf/datafile/fusion_undo01.dbf
+channel c2_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_147_US6BV1JF_4jspaghc
+channel c3_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_158_US6BV1JF_4uspaghd tag=FULL_ARCHIVE_TO_NFS
+channel c3_disk: restored backup piece 1
+channel c3_disk: restore complete, elapsed time: 00:00:02
+channel c3_disk: starting datafile backup set restore
+channel c3_disk: specifying datafile(s) to restore from backup set
+channel c3_disk: restoring datafile 00046 to +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.384.965900607
+channel c3_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_154_US6BV1JF_4qspaghd
+channel c4_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_159_US6BV1JF_4vspaghd tag=FULL_ARCHIVE_TO_NFS
+channel c4_disk: restored backup piece 1
+channel c4_disk: restore complete, elapsed time: 00:00:02
+channel c4_disk: starting datafile backup set restore
+channel c4_disk: specifying datafile(s) to restore from backup set
+channel c4_disk: restoring datafile 00047 to +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.381.965900607
+channel c4_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_155_US6BV1JF_4rspaghd
+channel c3_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_154_US6BV1JF_4qspaghd tag=FULL_ARCHIVE_TO_NFS
+channel c3_disk: restored backup piece 1
+channel c3_disk: restore complete, elapsed time: 00:00:15
+channel c3_disk: starting datafile backup set restore
+channel c3_disk: specifying datafile(s) to restore from backup set
+channel c3_disk: restoring datafile 00048 to +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.382.965900607
+channel c3_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_156_US6BV1JF_4sspaghd
+channel c4_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_155_US6BV1JF_4rspaghd tag=FULL_ARCHIVE_TO_NFS
+channel c4_disk: restored backup piece 1
+channel c4_disk: restore complete, elapsed time: 00:00:15
+channel c4_disk: starting datafile backup set restore
+channel c4_disk: specifying datafile(s) to restore from backup set
+channel c4_disk: restoring datafile 00001 to +DATA/us6bv1jf/datafile/system01.dbf
+channel c4_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_153_US6BV1JF_4pspaghd
+channel c1_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_146_US6BV1JF_4ispaghc tag=FULL_ARCHIVE_TO_NFS
+channel c1_disk: restored backup piece 1
+channel c1_disk: restore complete, elapsed time: 00:00:19
+channel c1_disk: starting datafile backup set restore
+channel c1_disk: specifying datafile(s) to restore from backup set
+channel c1_disk: restoring datafile 00017 to +DATA/us6bv1jf/datafile/fusion_seed_01.dbf
+channel c1_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_149_US6BV1JF_4lspaghc
+channel c2_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_147_US6BV1JF_4jspaghc tag=FULL_ARCHIVE_TO_NFS
+channel c2_disk: restored backup piece 1
+channel c2_disk: restore complete, elapsed time: 00:00:18
+channel c2_disk: starting datafile backup set restore
+channel c2_disk: specifying datafile(s) to restore from backup set
+channel c2_disk: restoring datafile 00018 to +DATA/us6bv1jf/datafile/fusion_seed_02.dbf
+channel c2_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_151_US6BV1JF_4nspaghc
+channel c3_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_156_US6BV1JF_4sspaghd tag=FULL_ARCHIVE_TO_NFS
+channel c3_disk: restored backup piece 1
+channel c3_disk: restore complete, elapsed time: 00:00:10
+channel c3_disk: starting datafile backup set restore
+channel c3_disk: specifying datafile(s) to restore from backup set
+channel c3_disk: restoring datafile 00002 to +DATA/us6bv1jf/datafile/sysaux01.dbf
+channel c3_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_152_US6BV1JF_4ospaghc
+channel c4_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_153_US6BV1JF_4pspaghd tag=FULL_ARCHIVE_TO_NFS
+channel c4_disk: restored backup piece 1
+channel c4_disk: restore complete, elapsed time: 00:00:13
+channel c4_disk: starting datafile backup set restore
+channel c4_disk: specifying datafile(s) to restore from backup set
+channel c4_disk: restoring datafile 00022 to +DATA/us6bv1jf/datafile/search_data_1.dbf
+channel c4_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_150_US6BV1JF_4mspaghc
+channel c1_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_149_US6BV1JF_4lspaghc tag=FULL_ARCHIVE_TO_NFS
+channel c1_disk: restored backup piece 1
+channel c1_disk: restore complete, elapsed time: 00:00:17
+channel c1_disk: starting datafile backup set restore
+channel c1_disk: specifying datafile(s) to restore from backup set
+channel c1_disk: restoring datafile 00044 to +DATA/US6BV1JF/DATAFILE/fusion_ts_tx_data.2403.965900609
+channel c1_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_144_US6BV1JF_4gspaghc
+channel c2_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_151_US6BV1JF_4nspaghc tag=FULL_ARCHIVE_TO_NFS
+channel c2_disk: restored backup piece 1
+channel c2_disk: restore complete, elapsed time: 00:00:18
+channel c2_disk: starting datafile backup set restore
+channel c2_disk: specifying datafile(s) to restore from backup set
+channel c2_disk: restoring datafile 00045 to +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.363.965900607
+channel c2_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_148_US6BV1JF_4kspaghc
+channel c3_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_152_US6BV1JF_4ospaghc tag=FULL_ARCHIVE_TO_NFS
+channel c3_disk: restored backup piece 1
+channel c3_disk: restore complete, elapsed time: 00:00:18
+channel c3_disk: starting datafile backup set restore
+channel c3_disk: specifying datafile(s) to restore from backup set
+channel c3_disk: restoring datafile 00005 to +DATA/us6bv1jf/datafile/fusion_transaction_table_02.dbf
+channel c3_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_124_US6BV1JF_3sspagha
+channel c4_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_150_US6BV1JF_4mspaghc tag=FULL_ARCHIVE_TO_NFS
+channel c4_disk: restored backup piece 1
+channel c4_disk: restore complete, elapsed time: 00:00:18
+channel c4_disk: starting datafile backup set restore
+channel c4_disk: specifying datafile(s) to restore from backup set
+channel c4_disk: restoring datafile 00027 to +DATA/us6bv1jf/datafile/fusion_transaction_index_02.dbf
+channel c4_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_141_US6BV1JF_4dspaghb
+channel c1_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_144_US6BV1JF_4gspaghc tag=FULL_ARCHIVE_TO_NFS
+channel c1_disk: restored backup piece 1
+channel c1_disk: restore complete, elapsed time: 00:00:36
+channel c1_disk: starting datafile backup set restore
+channel c1_disk: specifying datafile(s) to restore from backup set
+channel c1_disk: restoring datafile 00004 to +DATA/us6bv1jf/datafile/fusion_transaction_table_01.dbf
+channel c1_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_134_US6BV1JF_46spaghb
+channel c2_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_148_US6BV1JF_4kspaghc tag=FULL_ARCHIVE_TO_NFS
+channel c2_disk: restored backup piece 1
+channel c2_disk: restore complete, elapsed time: 00:00:42
+channel c2_disk: starting datafile backup set restore
+channel c2_disk: specifying datafile(s) to restore from backup set
+channel c2_disk: restoring datafile 00026 to +DATA/us6bv1jf/datafile/fusion_transaction_index_01.dbf
+channel c2_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_140_US6BV1JF_4cspaghb
+channel c3_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_124_US6BV1JF_3sspagha tag=FULL_ARCHIVE_TO_NFS
+channel c3_disk: restored backup piece 1
+channel c3_disk: restore complete, elapsed time: 00:01:00
+channel c3_disk: starting datafile backup set restore
+channel c3_disk: specifying datafile(s) to restore from backup set
+channel c3_disk: restoring datafile 00006 to +DATA/us6bv1jf/datafile/fusion_transaction_table_03.dbf
+channel c3_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_138_US6BV1JF_4aspaghb
+channel c4_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_141_US6BV1JF_4dspaghb tag=FULL_ARCHIVE_TO_NFS
+channel c4_disk: restored backup piece 1
+channel c4_disk: restore complete, elapsed time: 00:00:57
+channel c4_disk: starting datafile backup set restore
+channel c4_disk: specifying datafile(s) to restore from backup set
+channel c4_disk: restoring datafile 00043 to +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.2400.965900607
+channel c4_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_145_US6BV1JF_4hspaghc
+channel c1_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_134_US6BV1JF_46spaghb tag=FULL_ARCHIVE_TO_NFS
+channel c1_disk: restored backup piece 1
+channel c1_disk: restore complete, elapsed time: 00:00:57
+channel c1_disk: starting datafile backup set restore
+channel c1_disk: specifying datafile(s) to restore from backup set
+channel c1_disk: restoring datafile 00008 to +DATA/us6bv1jf/datafile/fusion_tools_02.dbf
+channel c1_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_133_US6BV1JF_45spaghb
+channel c2_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_140_US6BV1JF_4cspaghb tag=FULL_ARCHIVE_TO_NFS
+channel c2_disk: restored backup piece 1
+channel c2_disk: restore complete, elapsed time: 00:00:57
+channel c2_disk: starting datafile backup set restore
+channel c2_disk: specifying datafile(s) to restore from backup set
+channel c2_disk: restoring datafile 00009 to +DATA/us6bv1jf/datafile/fusion_tools_03.dbf
+channel c2_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_137_US6BV1JF_49spaghb
+channel c4_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_145_US6BV1JF_4hspaghc tag=FULL_ARCHIVE_TO_NFS
+channel c4_disk: restored backup piece 1
+channel c4_disk: restore complete, elapsed time: 00:00:58
+channel c4_disk: starting datafile backup set restore
+channel c4_disk: specifying datafile(s) to restore from backup set
+channel c4_disk: restoring datafile 00010 to +DATA/us6bv1jf/datafile/fusion_tools_04.dbf
+channel c4_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_135_US6BV1JF_47spaghb
+channel c3_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_138_US6BV1JF_4aspaghb tag=FULL_ARCHIVE_TO_NFS
+channel c3_disk: restored backup piece 1
+channel c3_disk: restore complete, elapsed time: 00:00:59
+channel c3_disk: starting datafile backup set restore
+channel c3_disk: specifying datafile(s) to restore from backup set
+channel c3_disk: restoring datafile 00007 to +DATA/us6bv1jf/datafile/fusion_tools_01.dbf
+channel c3_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_136_US6BV1JF_48spaghb
+channel c1_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_133_US6BV1JF_45spaghb tag=FULL_ARCHIVE_TO_NFS
+channel c1_disk: restored backup piece 1
+channel c1_disk: restore complete, elapsed time: 00:01:39
+channel c1_disk: starting datafile backup set restore
+channel c1_disk: specifying datafile(s) to restore from backup set
+channel c1_disk: restoring datafile 00035 to +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.429.965900605
+channel c1_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_128_US6BV1JF_40spaghb
+channel c2_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_137_US6BV1JF_49spaghb tag=FULL_ARCHIVE_TO_NFS
+channel c2_disk: restored backup piece 1
+channel c2_disk: restore complete, elapsed time: 00:01:32
+channel c2_disk: starting datafile backup set restore
+channel c2_disk: specifying datafile(s) to restore from backup set
+channel c2_disk: restoring datafile 00034 to +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.426.965900605
+channel c2_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_127_US6BV1JF_3vspagha
+channel c3_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_136_US6BV1JF_48spaghb tag=FULL_ARCHIVE_TO_NFS
+channel c3_disk: restored backup piece 1
+channel c3_disk: restore complete, elapsed time: 00:01:30
+channel c3_disk: starting datafile backup set restore
+channel c3_disk: specifying datafile(s) to restore from backup set
+channel c3_disk: restoring datafile 00041 to +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.2397.965900607
+channel c3_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_143_US6BV1JF_4fspaghc
+channel c4_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_135_US6BV1JF_47spaghb tag=FULL_ARCHIVE_TO_NFS
+channel c4_disk: restored backup piece 1
+channel c4_disk: restore complete, elapsed time: 00:01:31
+channel c4_disk: starting datafile backup set restore
+channel c4_disk: specifying datafile(s) to restore from backup set
+channel c4_disk: restoring datafile 00042 to +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.2398.965900607
+channel c4_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_142_US6BV1JF_4espaghc
+channel c1_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_128_US6BV1JF_40spaghb tag=FULL_ARCHIVE_TO_NFS
+channel c1_disk: restored backup piece 1
+channel c1_disk: restore complete, elapsed time: 00:01:40
+channel c1_disk: starting datafile backup set restore
+channel c1_disk: specifying datafile(s) to restore from backup set
+channel c1_disk: restoring datafile 00032 to +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.380.965900607
+channel c1_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_125_US6BV1JF_3tspagha
+channel c2_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_127_US6BV1JF_3vspagha tag=FULL_ARCHIVE_TO_NFS
+channel c2_disk: restored backup piece 1
+channel c2_disk: restore complete, elapsed time: 00:01:40
+channel c2_disk: starting datafile backup set restore
+channel c2_disk: specifying datafile(s) to restore from backup set
+channel c2_disk: restoring datafile 00033 to +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.387.965900607
+channel c2_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_126_US6BV1JF_3uspagha
+channel c3_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_143_US6BV1JF_4fspaghc tag=FULL_ARCHIVE_TO_NFS
+channel c3_disk: restored backup piece 1
+channel c3_disk: restore complete, elapsed time: 00:01:22
+channel c3_disk: starting datafile backup set restore
+channel c3_disk: specifying datafile(s) to restore from backup set
+channel c3_disk: restoring datafile 00036 to +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.437.965900605
+channel c3_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_129_US6BV1JF_41spaghb
+channel c4_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_142_US6BV1JF_4espaghc tag=FULL_ARCHIVE_TO_NFS
+channel c4_disk: restored backup piece 1
+channel c4_disk: restore complete, elapsed time: 00:01:26
+channel c4_disk: starting datafile backup set restore
+channel c4_disk: specifying datafile(s) to restore from backup set
+channel c4_disk: restoring datafile 00037 to +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.687.965900605
+channel c4_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_130_US6BV1JF_42spaghb
+channel c1_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_125_US6BV1JF_3tspagha tag=FULL_ARCHIVE_TO_NFS
+channel c1_disk: restored backup piece 1
+channel c1_disk: restore complete, elapsed time: 00:01:46
+channel c1_disk: starting datafile backup set restore
+channel c1_disk: specifying datafile(s) to restore from backup set
+channel c1_disk: restoring datafile 00040 to +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.373.965900607
+channel c1_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_139_US6BV1JF_4bspaghb
+channel c2_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_126_US6BV1JF_3uspagha tag=FULL_ARCHIVE_TO_NFS
+channel c2_disk: restored backup piece 1
+channel c2_disk: restore complete, elapsed time: 00:01:46
+channel c2_disk: starting datafile backup set restore
+channel c2_disk: specifying datafile(s) to restore from backup set
+channel c2_disk: restoring datafile 00039 to +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.388.965900605
+channel c2_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_132_US6BV1JF_44spaghb
+channel c3_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_129_US6BV1JF_41spaghb tag=FULL_ARCHIVE_TO_NFS
+channel c3_disk: restored backup piece 1
+channel c3_disk: restore complete, elapsed time: 00:01:46
+channel c3_disk: starting datafile backup set restore
+channel c3_disk: specifying datafile(s) to restore from backup set
+channel c3_disk: restoring datafile 00038 to +DATA/US6BV1JF/DATAFILE/fusion_ts_tools.378.965900607
+channel c3_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_131_US6BV1JF_43spaghb
+channel c4_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_130_US6BV1JF_42spaghb tag=FULL_ARCHIVE_TO_NFS
+channel c4_disk: restored backup piece 1
+channel c4_disk: restore complete, elapsed time: 00:01:45
+channel c1_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_139_US6BV1JF_4bspaghb tag=FULL_ARCHIVE_TO_NFS
+channel c1_disk: restored backup piece 1
+channel c1_disk: restore complete, elapsed time: 00:01:52
+channel c2_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_132_US6BV1JF_44spaghb tag=FULL_ARCHIVE_TO_NFS
+channel c2_disk: restored backup piece 1
+channel c2_disk: restore complete, elapsed time: 00:02:02
+channel c3_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_131_US6BV1JF_43spaghb tag=FULL_ARCHIVE_TO_NFS
+channel c3_disk: restored backup piece 1
+channel c3_disk: restore complete, elapsed time: 00:01:55
+Finished restore at 11-APR-18
+
+Starting recover at 11-APR-18
+
+starting media recovery
+
+channel c1_disk: starting archived log restore to default destination
+channel c1_disk: restoring archived log
+archived log thread=1 sequence=29
+channel c1_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_174_US6BV1JF_5espah88
+channel c2_disk: starting archived log restore to default destination
+channel c2_disk: restoring archived log
+archived log thread=2 sequence=20
+channel c2_disk: reading from backup piece /db_backup/EHNH/us6bv1jf/backupset_175_US6BV1JF_5fspah88
+channel c2_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_175_US6BV1JF_5fspah88 tag=FULL_ARCHIVE_TO_NFS
+channel c2_disk: restored backup piece 1
+channel c2_disk: restore complete, elapsed time: 00:00:01
+channel c1_disk: piece handle=/db_backup/EHNH/us6bv1jf/backupset_174_US6BV1JF_5espah88 tag=FULL_ARCHIVE_TO_NFS
+channel c1_disk: restored backup piece 1
+channel c1_disk: restore complete, elapsed time: 00:00:03
+archived log file name=+RECO/US6BV1JF/ARCHIVELOG/2018_04_11/thread_1_seq_29.5328.973134841 thread=1 sequence=29
+archived log file name=+RECO/US6BV1JF/ARCHIVELOG/2018_04_11/thread_2_seq_20.14352.973134841 thread=2 sequence=20
+channel default: deleting archived log(s)
+archived log file name=+RECO/US6BV1JF/ARCHIVELOG/2018_04_11/thread_1_seq_29.5328.973134841 RECID=221 STAMP=973134843
+channel default: deleting archived log(s)
+archived log file name=+RECO/US6BV1JF/ARCHIVELOG/2018_04_11/thread_2_seq_20.14352.973134841 RECID=220 STAMP=973134842
+media recovery complete, elapsed time: 00:00:01
+Finished recover at 11-APR-18
+released channel: c1_disk
+released channel: c2_disk
+released channel: c3_disk
+released channel: c4_disk
+
+RMAN> exit
+
+
+Recovery Manager complete.
+[oracle@lpdx01c080616 us6bv1jf]$ sqlplus '/as sysdba'
+
+SQL*Plus: Release 12.1.0.2.0 Production on Wed Apr 11 03:15:06 2018
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, Real Application Clusters, Automatic Storage Management, OLAP,
+Advanced Analytics and Real Application Testing options
+
+SQL> select distinct CHECKPOINT_TIME,CHECKPOINT_CHANGE# from v$datafile_header;
+
+CHECKPOIN CHECKPOINT_CHANGE#
+--------- ------------------
+22-JAN-18         1.8227E+10
+
+SQL> alter database open resetlogs;
+
+Database altered.
+
+SQL> shut immediate;
+Database closed.
+Database dismounted.
+ORACLE instance shut down.
+SQL> exit
+Disconnected from Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, Real Application Clusters, Automatic Storage Management, OLAP,
+Advanced Analytics and Real Application Testing options
+[oracle@lpdx01c080616 us6bv1jf]$ srvctl start database -d US6BV1JF
+[oracle@lpdx01c080616 us6bv1jf]$ srvctl status database -d US6BV1JF
+Instance us6bv1jf1 is running on node lpdx01c080616
+Instance us6bv1jf2 is running on node lpdx02c080616
+[oracle@lpdx01c080616 us6bv1jf]$
